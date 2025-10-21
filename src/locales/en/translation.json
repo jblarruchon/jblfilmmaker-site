@@ -1,0 +1,92 @@
+{
+  "nav": {
+    "portfolio": "Portfolio",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "legal": "Legal notice"
+  },
+  "home": {
+    "title": "Portfolio",
+    "intro": "Discover premium video services, tailored for weddings, private or professional events."
+  },
+  "about": {
+    "title": "About",
+    "text": "Passionate about images and emotions, JBL Filmmaker captures the present moment and tells your story with authenticity and elegance. Each project is a human adventure, where every glance, word and detail comes to life through a carefully crafted cinematic approach."
+  },
+  
+  "services": {
+    "title": "PACKAGES",
+    "packages": {
+      "film": "FILM",
+      "prestige": "PRESTIGE",
+      "timeless": "TIMELESS",
+
+      "duration_short": "3–5 min",
+      "duration_medium": "6–10 min",
+      "duration_long": "12–15 min",
+
+      "feature_film4k": "4K Film",
+      "feature_1cam": "1 videographer",
+      "feature_2cam": "2 videographers",
+      "feature_drone": "Drone",
+      "feature_audio": "Audio / Speeches • recorded",
+      "feature_teaser": "2-min Teaser",
+
+      "cta_quote": "Request a quote",
+
+      "note": "*Packages include my presence throughout the day (from preparations to the first dance), editing time, equipment amortization, travel expenses and delivery via a personalized video gallery. Add-ons can be included on request.",
+
+      "addons_title": "ADD-ONS",
+
+      "raw": "RAW VIDEO RUSHES",
+      "raw_desc": "Delivery of all raw footage from the wedding ceremony.",
+      "trailer": "VIDEO TRAILER",
+      "trailer_desc": "1-minute highlight edit. Perfect for social media.",
+      "halfday": "EXTRA HALF-DAY",
+      "halfday_desc": "Additional half-day coverage, footage added to the final edit.",
+      "second": "SECOND VIDEOGRAPHER",
+      "second_desc": "A second videographer for more complete coverage.",
+      "special": "SPECIAL EDIT",
+      "special_desc": "Dedicated edit of a special moment (civil / religious / secular ceremony, etc.).",
+      "prewedding": "PRE-WEDDING VIDEO",
+      "prewedding_desc": "Session organized before/after the wedding (3–4h coverage) — cinematic memories."
+    }
+  },
+
+  "contact": {
+    "title": "Contact",
+    "intro": "For any service request or information, please fill out the form below. I’ll get back to you quickly 📩",
+    "form": {
+      "last_name": "Last name",
+      "first_name": "First name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "where": "How did you find me?",
+      "where_options": {
+        "word": "Word of mouth",
+        "instagram": "Instagram",
+        "social": "Social media"
+      },
+      "budget": "Your budget (€)",
+      "date": "Event date",
+      "place": "Location",
+      "what_like": "What do you like in my work?",
+      "message": "Tell me about your wedding",
+      "wish_package": "Desired package",
+      "send": "Send",
+      "sending": "Sending...",
+      "success_title": "Thank you! Your message has been sent ✅",
+      "success_detail": "I’ll get back to you as soon as possible. You can also write to",
+      "error_generic": "An error occurred. Please try again.",
+      "error_network": "Unable to send the form. Please check your connection."
+    }
+  },
+"legal": {
+  "title": "Legal notice",
+  "text": "This website is published by JBL Filmmaker. All content (texts, images, videos) is the exclusive property of JBL Filmmaker and may not be used without permission. Contact: {{email}}"
+}
+}
