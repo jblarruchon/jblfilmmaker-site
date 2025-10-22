@@ -55,42 +55,73 @@ const VideoModal = ({ videoUrl, onClose }) => {
 // --- NAVBAR ---
 const Navbar = () => {
   const { t, i18n } = useTranslation();
+  const [open, setOpen] = useState(false);
+
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     localStorage.setItem("lang", lng);
   };
+
   return (
     <motion.nav
       initial={{ opacity: 0, y: -20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6 }}
-      className="fixed top-0 left-0 w-full bg-white shadow-md flex items-center justify-center px-8 py-8 z-50"
+      className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur shadow-md z-50"
     >
-      <div className="absolute left-8 flex items-center space-x-3">
-        <img src={logo} alt="Logo JBL Filmmaker" className="h-16 md:h-20" />
-      </div>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Bar */}
+        <div className="h-20 flex items-center justify-between">
+          {/* Logo */}
+          <Link to="/" className="flex items-center space-x-3">
+            <img src={logo} alt="Logo JBL Filmmaker" className="h-12 md:h-16" />
+          </Link>
 
-      <div className="flex space-x-10 text-sm uppercase tracking-widest font-light mt-4">
-        <Link to="/">{t("nav.portfolio")}</Link>
-        <Link to="/about">{t("nav.about")}</Link>
-        <Link to="/prestations">{t("nav.services")}</Link>
-        <Link to="/contact">{t("nav.contact")}</Link>
-      </div>
+          {/* Links desktop */}
+          <div className="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.2em]">
+            <Link to="/" className="hover:text-gray-600">{t("nav.portfolio")}</Link>
+            <Link to="/about" className="hover:text-gray-600">{t("nav.about")}</Link>
+            <Link to="/prestations" className="hover:text-gray-600">{t("nav.services")}</Link>
+            <Link to="/contact" className="hover:text-gray-600">{t("nav.contact")}</Link>
 
-      <div className="absolute right-8 flex space-x-2 text-sm">
-        <button
-          onClick={() => changeLanguage("fr")}
-          className={i18n.language === "fr" ? "font-bold underline" : ""}
-        >
-          FR
-        </button>
-        <span>|</span>
-        <button
-          onClick={() => changeLanguage("en")}
-          className={i18n.language === "en" ? "font-bold underline" : ""}
-        >
-          EN
-        </button>
+            <span className="h-5 w-px bg-gray-200" />
+            {/* Lang */}
+            <button onClick={() => changeLanguage("fr")} className={`hover:underline ${i18n.language === "fr" ? "font-semibold underline" : ""}`}>FR</button>
+            <button onClick={() => changeLanguage("en")} className={`hover:underline ${i18n.language === "en" ? "font-semibold underline" : ""}`}>EN</button>
+          </div>
+
+          {/* Burger mobile */}
+          <button
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-gray-200"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Menu"
+          >
+            {open ? "✕" : "☰"}
+          </button>
+        </div>
+
+        {/* Drawer mobile */}
+        {open && (
+          <div className="md:hidden border-t border-gray-200 py-3 space-y-2 text-sm uppercase tracking-[0.2em]">
+            <Link onClick={() => setOpen(false)} to="/" className="block py-2 hover:text-gray-600">{t("nav.portfolio")}</Link>
+            <Link onClick={() => setOpen(false)} to="/about" className="block py-2 hover:text-gray-600">{t("nav.about")}</Link>
+            <Link onClick={() => setOpen(false)} to="/prestations" className="block py-2 hover:text-gray-600">{t("nav.services")}</Link>
+            <Link onClick={() => setOpen(false)} to="/contact" className="block py-2 hover:text-gray-600">{t("nav.contact")}</Link>
+            <div className="flex items-center space-x-4 pt-2">
+              <button onClick={() => changeLanguage("fr")} className={`hover:underline ${i18n.language === "fr" ? "font-semibold underline" : ""}`}>FR</button>
+              <button onClick={() => changeLanguage("en")} className={`hover:underline ${i18n.language === "en" ? "font-semibold underline" : ""}`}>EN</button>
+              <a
+                href={CONFIG.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-auto"
+                aria-label="Instagram"
+              >
+                <Instagram size={20} strokeWidth={1.5} />
+              </a>
+            </div>
+          </div>
+        )}
       </div>
     </motion.nav>
   );
@@ -120,30 +151,36 @@ const Footer = () => {
   );
 };
 
-// --- PAGES ---
 const Portfolio = () => {
   const { t } = useTranslation();
   const [selectedVideo, setSelectedVideo] = useState(null);
+
   const portfolioItems = [
     { id: 1, img: img1, vimeo: "https://vimeo.com/1125339230" },
     { id: 2, img: img2, vimeo: "https://vimeo.com/987654321" },
     { id: 3, img: img3, vimeo: "https://vimeo.com/567890123" }
   ];
+
   return (
-    <div className="min-h-screen bg-white text-black flex flex-col items-center py-12">
-      <h1 className="text-3xl font-light mb-8">{t("home.title")}</h1>
-      <p className="max-w-2xl text-center text-gray-700 mb-10">{t("home.intro")}</p>
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 justify-items-center px-4 max-w-5xl mx-auto">
-        {portfolioItems.map((item) => (
-          <div
-            key={item.id}
-            className="cursor-pointer block overflow-hidden rounded-2xl shadow-lg hover:scale-105 transition-transform duration-300"
-            onClick={() => setSelectedVideo(item.vimeo)}
-          >
-            <img src={item.img} alt="Portfolio" className="w-full h-full object-cover" />
-          </div>
-        ))}
+    <div className="min-h-screen bg-white text-black flex flex-col items-center pt-24 md:pt-28">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h1 className="text-2xl md:text-3xl font-light mb-4 text-center">{t("home.title")}</h1>
+        <p className="max-w-2xl mx-auto text-center text-gray-700 mb-8 md:mb-12">{t("home.intro")}</p>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
+          {portfolioItems.map((item) => (
+            <button
+              type="button"
+              key={item.id}
+              className="block overflow-hidden rounded-2xl shadow-lg hover:scale-[1.01] transition-transform"
+              onClick={() => setSelectedVideo(item.vimeo)}
+            >
+              <img src={item.img} alt="Portfolio" className="w-full h-64 md:h-72 object-cover" />
+            </button>
+          ))}
+        </div>
       </div>
+
       <VideoModal videoUrl={selectedVideo} onClose={() => setSelectedVideo(null)} />
       <Footer />
     </div>
@@ -173,11 +210,13 @@ const About = () => {
 
 const Prestations = () => {
   const { t } = useTranslation();
+
   const packages = [
-    { key: "film", durationKey: "duration_short", tone: "light", features: ["feature_film4k", "feature_1cam", "feature_drone", "feature_audio"] },
-    { key: "prestige", durationKey: "duration_medium", tone: "dark", features: ["feature_film4k", "feature_1cam", "feature_drone", "feature_audio"], featured: true },
-    { key: "timeless", durationKey: "duration_long", tone: "black", features: ["feature_teaser", "feature_film4k", "feature_2cam", "feature_drone", "feature_audio"] },
+    { key: "film",      durationKey: "duration_short",  tone: "light", features: ["feature_film4k","feature_1cam","feature_drone","feature_audio"] },
+    { key: "prestige",  durationKey: "duration_medium", tone: "dark",  features: ["feature_film4k","feature_1cam","feature_drone","feature_audio"], featured: true },
+    { key: "timeless",  durationKey: "duration_long",   tone: "black", features: ["feature_teaser","feature_film4k","feature_2cam","feature_drone","feature_audio"] },
   ];
+
   const supplements = [
     { key: "raw", descKey: "raw_desc" },
     { key: "trailer", descKey: "trailer_desc" },
@@ -186,63 +225,82 @@ const Prestations = () => {
     { key: "special", descKey: "special_desc" },
     { key: "prewedding", descKey: "prewedding_desc" },
   ];
+
   return (
-    <div className="min-h-screen w-full bg-gray-50 text-black flex flex-col items-center py-16 px-4">
-      <h1 className="text-3xl tracking-[0.3em] font-light text-center mb-4">{t("services.title")}</h1>
+    <div className="min-h-screen w-full bg-gray-50 text-black flex flex-col items-center pt-24 md:pt-28">
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Titre */}
+        <h1 className="text-2xl md:text-3xl tracking-[0.25em] font-light text-center mb-6 md:mb-10">
+          {t("services.title")}
+        </h1>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl w-full">
-        {packages.map((pack, i) => (
-          <motion.div
-            key={pack.key}
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.08 }}
-            className={[
-              "rounded-[2.5rem] p-8 text-center shadow-lg border transition-transform",
-              pack.tone === "light" && "bg-gray-100/80 border-gray-200 text-gray-700",
-              pack.tone === "dark" && "bg-neutral-800 text-white border-neutral-700",
-              pack.tone === "black" && "bg-black text-white border-neutral-900",
-              pack.featured && "scale-[1.02]",
-            ].join(" ")}
-          >
-            <h3 className="text-xl tracking-widest font-light mb-2">{t(`services.packages.${pack.key}`)}</h3>
-            <p className="italic tracking-wider mb-6 opacity-80">{t(`services.packages.${pack.durationKey}`)}</p>
-            <ul className="space-y-2 text-sm leading-6">
-              {pack.features.map((f) => (
-                <li key={f} className="uppercase tracking-wider">{t(`services.packages.${f}`)}</li>
-              ))}
-            </ul>
-            <Link
-              to={`/contact?formule=${encodeURIComponent(t(`services.packages.${pack.key}`))}`}
-              className="mt-8 inline-block rounded-full px-5 py-2 text-sm border border-current hover:opacity-80 transition"
+        {/* Cartes formules */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+          {packages.map((pack, i) => (
+            <motion.div
+              key={pack.key}
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.08 }}
+              className={[
+                "rounded-3xl p-6 md:p-8 text-center shadow-lg border transition-transform",
+                pack.tone === "light" && "bg-gray-100/80 border-gray-200 text-gray-700",
+                pack.tone === "dark" && "bg-neutral-800 text-white border-neutral-700",
+                pack.tone === "black" && "bg-black text-white border-neutral-900",
+                pack.featured && "md:scale-[1.02]",
+              ].join(" ")}
             >
-              {t("services.packages.cta_quote")}
-            </Link>
-          </motion.div>
-        ))}
-      </div>
+              <h3 className="text-lg md:text-xl tracking-widest font-light mb-2">
+                {t(`services.packages.${pack.key}`)}
+              </h3>
+              <p className="italic tracking-wider mb-6 opacity-80">
+                {t(`services.packages.${pack.durationKey}`)}
+              </p>
 
-      <p className="max-w-4xl text-center text-xs text-gray-600 mt-10 leading-relaxed">
-        {t("services.packages.note")}
-      </p>
+              <ul className="space-y-2 text-sm md:text-base leading-6">
+                {pack.features.map((f) => (
+                  <li key={f} className="uppercase tracking-wider">{t(`services.packages.${f}`)}</li>
+                ))}
+              </ul>
 
-      <h2 className="text-3xl tracking-[0.3em] font-light text-center mt-16 mb-8">
-        {t("services.packages.addons_title")}
-      </h2>
+              <Link
+                to={`/contact?formule=${encodeURIComponent(t(`services.packages.${pack.key}`))}`}
+                className="mt-6 md:mt-8 inline-block rounded-full px-5 py-2 text-sm border border-current hover:opacity-80 transition"
+              >
+                {t("services.packages.cta_quote")}
+              </Link>
+            </motion.div>
+          ))}
+        </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl w-full">
-        {supplements.map((s, i) => (
-          <motion.div
-            key={s.key}
-            initial={{ opacity: 0, y: 16 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: i * 0.06 }}
-            className="bg-neutral-800 text-white rounded-xl p-6 shadow-md"
-          >
-            <h3 className="text-lg tracking-widest font-light mb-2">{t(`services.packages.${s.key}`)}</h3>
-            <p className="text-sm leading-relaxed text-neutral-200">{t(`services.packages.${s.descKey}`)}</p>
-          </motion.div>
-        ))}
+        {/* Note */}
+        <p className="max-w-4xl mx-auto text-center text-xs text-gray-600 mt-8 md:mt-10 leading-relaxed">
+          {t("services.packages.note")}
+        </p>
+
+        {/* Suppléments */}
+        <h2 className="text-2xl md:text-3xl tracking-[0.25em] font-light text-center mt-12 md:mt-16 mb-6 md:mb-8">
+          {t("services.packages.addons_title")}
+        </h2>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
+          {supplements.map((s, i) => (
+            <motion.div
+              key={s.key}
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.06 }}
+              className="bg-neutral-800 text-white rounded-xl p-5 md:p-6 shadow-md"
+            >
+              <h3 className="text-base md:text-lg tracking-widest font-light mb-2">
+                {t(`services.packages.${s.key}`)}
+              </h3>
+              <p className="text-sm md:text-base leading-relaxed text-neutral-200">
+                {t(`services.packages.${s.descKey}`)}
+              </p>
+            </motion.div>
+          ))}
+        </div>
       </div>
 
       <Footer />
