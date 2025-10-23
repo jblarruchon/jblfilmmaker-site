@@ -238,8 +238,8 @@ const Portfolio = () => {
 
   const portfolioItems = [
     { id: 1, img: img1, vimeo: "https://vimeo.com/1125339230" },
-    { id: 2, img: img2, vimeo: "https://vimeo.com/987654321" },
-    { id: 3, img: img3, vimeo: "https://vimeo.com/567890123" }
+    { id: 2, img: img2, vimeo: "https://vimeo.com/1095070627" },
+    { id: 3, img: img3, vimeo: "https://vimeo.com/1112924585" }
   ];
 
   return (
