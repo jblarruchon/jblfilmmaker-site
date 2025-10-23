@@ -70,29 +70,72 @@ const Navbar = () => {
       className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur shadow-md z-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Bar */}
-        <div className="h-20 flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center space-x-3">
-            <img src={logo} alt="Logo JBL Filmmaker" className="h-12 md:h-16" />
-          </Link>
+        {/* Barre principale */}
+        <div className="h-20 flex flex-col md:flex-row items-center justify-between">
+          {/* Bloc Logo + Nom */}
+          <div className="flex flex-col items-center md:flex-row md:items-center md:space-x-3">
+            <Link
+              to="/"
+              className="flex flex-col items-center md:flex-row md:items-center"
+            >
+              <img
+                src={logo}
+                alt="Logo JBL Filmmaker"
+                className="h-12 md:h-16 mb-2 md:mb-0"
+              />
 
-          {/* Links desktop */}
+              {/* Nom animé — uniquement visible sur mobile */}
+              <motion.span
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
+                className="block md:hidden text-sm font-semibold text-gray-900 tracking-widest uppercase"
+                style={{ fontFamily: '"Playfair Display", serif' }}
+              >
+                JEAN-BAPTISTE LARRUCHON
+              </motion.span>
+            </Link>
+          </div>
+
+          {/* Liens desktop */}
           <div className="hidden md:flex items-center space-x-8 text-xs uppercase tracking-[0.2em]">
-            <Link to="/" className="hover:text-gray-600">{t("nav.portfolio")}</Link>
-            <Link to="/about" className="hover:text-gray-600">{t("nav.about")}</Link>
-            <Link to="/prestations" className="hover:text-gray-600">{t("nav.services")}</Link>
-            <Link to="/contact" className="hover:text-gray-600">{t("nav.contact")}</Link>
+            <Link to="/" className="hover:text-gray-600">
+              {t("nav.portfolio")}
+            </Link>
+            <Link to="/about" className="hover:text-gray-600">
+              {t("nav.about")}
+            </Link>
+            <Link to="/prestations" className="hover:text-gray-600">
+              {t("nav.services")}
+            </Link>
+            <Link to="/contact" className="hover:text-gray-600">
+              {t("nav.contact")}
+            </Link>
 
             <span className="h-5 w-px bg-gray-200" />
-            {/* Lang */}
-            <button onClick={() => changeLanguage("fr")} className={`hover:underline ${i18n.language === "fr" ? "font-semibold underline" : ""}`}>FR</button>
-            <button onClick={() => changeLanguage("en")} className={`hover:underline ${i18n.language === "en" ? "font-semibold underline" : ""}`}>EN</button>
+
+            {/* Langues */}
+            <button
+              onClick={() => changeLanguage("fr")}
+              className={`hover:underline ${
+                i18n.language === "fr" ? "font-semibold underline" : ""
+              }`}
+            >
+              FR
+            </button>
+            <button
+              onClick={() => changeLanguage("en")}
+              className={`hover:underline ${
+                i18n.language === "en" ? "font-semibold underline" : ""
+              }`}
+            >
+              EN
+            </button>
           </div>
 
           {/* Burger mobile */}
           <button
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-gray-200"
+            className="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-gray-200 mt-2"
             onClick={() => setOpen((v) => !v)}
             aria-label="Menu"
           >
@@ -102,19 +145,57 @@ const Navbar = () => {
 
         {/* Drawer mobile */}
         {open && (
-          <div className="md:hidden border-t border-gray-200 py-3 space-y-2 text-sm uppercase tracking-[0.2em]">
-            <Link onClick={() => setOpen(false)} to="/" className="block py-2 hover:text-gray-600">{t("nav.portfolio")}</Link>
-            <Link onClick={() => setOpen(false)} to="/about" className="block py-2 hover:text-gray-600">{t("nav.about")}</Link>
-            <Link onClick={() => setOpen(false)} to="/prestations" className="block py-2 hover:text-gray-600">{t("nav.services")}</Link>
-            <Link onClick={() => setOpen(false)} to="/contact" className="block py-2 hover:text-gray-600">{t("nav.contact")}</Link>
-            <div className="flex items-center space-x-4 pt-2">
-              <button onClick={() => changeLanguage("fr")} className={`hover:underline ${i18n.language === "fr" ? "font-semibold underline" : ""}`}>FR</button>
-              <button onClick={() => changeLanguage("en")} className={`hover:underline ${i18n.language === "en" ? "font-semibold underline" : ""}`}>EN</button>
+          <div className="md:hidden border-t border-gray-200 py-3 space-y-2 text-sm uppercase tracking-[0.2em] text-center">
+            <Link
+              onClick={() => setOpen(false)}
+              to="/"
+              className="block py-2 hover:text-gray-600"
+            >
+              {t("nav.portfolio")}
+            </Link>
+            <Link
+              onClick={() => setOpen(false)}
+              to="/about"
+              className="block py-2 hover:text-gray-600"
+            >
+              {t("nav.about")}
+            </Link>
+            <Link
+              onClick={() => setOpen(false)}
+              to="/prestations"
+              className="block py-2 hover:text-gray-600"
+            >
+              {t("nav.services")}
+            </Link>
+            <Link
+              onClick={() => setOpen(false)}
+              to="/contact"
+              className="block py-2 hover:text-gray-600"
+            >
+              {t("nav.contact")}
+            </Link>
+            <div className="flex items-center justify-center space-x-4 pt-2">
+              <button
+                onClick={() => changeLanguage("fr")}
+                className={`hover:underline ${
+                  i18n.language === "fr" ? "font-semibold underline" : ""
+                }`}
+              >
+                FR
+              </button>
+              <button
+                onClick={() => changeLanguage("en")}
+                className={`hover:underline ${
+                  i18n.language === "en" ? "font-semibold underline" : ""
+                }`}
+              >
+                EN
+              </button>
               <a
                 href={CONFIG.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-auto"
+                className="ml-2"
                 aria-label="Instagram"
               >
                 <Instagram size={20} strokeWidth={1.5} />
