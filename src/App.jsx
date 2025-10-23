@@ -10,6 +10,7 @@ import CONFIG from "./config"; // ✅ chemin corrigé
 import img1 from "./assets/Preview-Julie-Renan-37.jpeg";
 import img2 from "./assets/162.jpeg";
 import img3 from "./assets/EP1397.jpeg";
+import img4 from "./assets/thumb.jpg";
 import portraitJBL from "./assets/portrait-jbl.jpeg";
 import contactBanner from "./assets/contact-banner-1600x600.jpeg";
 
@@ -232,33 +233,117 @@ const Footer = () => {
   );
 };
 
+// --- Carte image réutilisable avec titre en surimpression ---
+// Carte image avec overlay titre/sous-titre + hover élégant
+// --- ImageCard avec hover élégant et titre ---
+const ImageCard = ({ item, onClick, aspect = "aspect-[16/9]" }) => (
+  <button
+    type="button"
+    onClick={() => onClick(item.vimeo)}
+    className="group relative overflow-hidden rounded-2xl w-full"
+    aria-label={item.title || "Ouvrir la vidéo"}
+  >
+    <div className={`w-full ${aspect}`}>
+      <img
+        src={item.img}
+        alt={item.title || "Portfolio"}
+        className="w-full h-full object-cover transform transition-all duration-700 ease-[cubic-bezier(.25,.1,.25,1)] group-hover:scale-[1.03] group-hover:shadow-[0_8px_30px_rgba(0,0,0,0.15)]"
+      />
+    </div>
+
+    {/* Overlay titre */}
+    {item.title && (
+      <div
+        className="absolute inset-0 flex items-center justify-center text-center px-4"
+        style={{ fontFamily: '"Playfair Display", serif' }}
+      >
+        <span className="text-white text-sm md:text-lg tracking-[0.15em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform">
+          {item.title}
+        </span>
+      </div>
+    )}
+  </button>
+);
+
+// --- Portfolio ---
 const Portfolio = () => {
   const { t } = useTranslation();
   const [selectedVideo, setSelectedVideo] = useState(null);
 
   const portfolioItems = [
-    { id: 1, img: img1, vimeo: "https://vimeo.com/1125339230" },
-    { id: 2, img: img2, vimeo: "https://vimeo.com/1095070627" },
-    { id: 3, img: img3, vimeo: "https://vimeo.com/1112924585" }
+    { id: 1, img: img1, vimeo: "https://vimeo.com/1125339230", title: "SO ROMANTIC" },
+    { id: 2, img: img2, vimeo: "https://vimeo.com/1095070627", title: "LOVE" },
+    { id: 3, img: img3, vimeo: "https://vimeo.com/1112924585", title: "CLOSE TO YOU" },
+    { id: 4, img: img4, vimeo: "https://vimeo.com/1084270881", title: "SUMMER GARDEN" },
   ];
+
+  const chunk = (arr, size) =>
+    arr.reduce((acc, _, i) => (i % size ? acc : [...acc, arr.slice(i, i + size)]), []);
 
   return (
     <div className="min-h-screen bg-white text-black flex flex-col items-center pt-24 md:pt-28">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-2xl md:text-3xl font-light mb-4 text-center">{t("home.title")}</h1>
-        <p className="max-w-2xl mx-auto text-center text-gray-700 mb-8 md:mb-12">{t("home.intro")}</p>
+        {/* TITRE & INTRO */}
+        <h1 className="text-2xl md:text-3xl font-light mb-4 text-center">
+          {t("home.title")}
+        </h1>
+        <p className="max-w-2xl mx-auto text-center text-gray-700 mb-8 md:mb-12">
+          {t("home.intro")}
+        </p>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-8">
-          {portfolioItems.map((item) => (
-            <button
-              type="button"
-              key={item.id}
-              className="block overflow-hidden rounded-2xl shadow-lg hover:scale-[1.01] transition-transform"
-              onClick={() => setSelectedVideo(item.vimeo)}
-            >
-              <img src={item.img} alt="Portfolio" className="w-full h-64 md:h-72 object-cover" />
-            </button>
-          ))}
+        {/* GALERIE */}
+        <div className="space-y-10 md:space-y-16">
+          {chunk(portfolioItems, 3).map((group, gi) => {
+            const [big, top, bottom] = group;
+            const isEven = gi % 2 === 1;
+
+            return (
+              <div
+                key={gi}
+                className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 items-stretch"
+              >
+                {/* Colonne principale (image large) */}
+                {big && (
+                  <div
+                    className={`${isEven ? "md:order-2" : "md:order-1"} flex`}
+                    style={{ height: "100%" }}
+                  >
+                    <ImageCard
+                      item={big}
+                      onClick={setSelectedVideo}
+                      aspect="aspect-[3/4]" // 👈 ratio plus vertical pour l’équilibre
+                    />
+                  </div>
+                )}
+
+                {/* Colonne secondaire (deux images empilées, hauteur 50% chacune) */}
+                <div
+                  className={`${
+                    isEven ? "md:order-1" : "md:order-2"
+                  } flex flex-col justify-between h-full space-y-5 md:space-y-6`}
+                >
+                  {top && (
+                    <div className="flex-1">
+                      <ImageCard
+                        item={top}
+                        onClick={setSelectedVideo}
+                        aspect="aspect-[16/10]"
+                      />
+                    </div>
+                  )}
+                  {bottom && (
+                    <div className="flex-1">
+                      <ImageCard
+                        item={bottom}
+                        onClick={setSelectedVideo}
+                        aspect="aspect-[16/10]"
+                      />
+                    </div>
+                  )}
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
 
