@@ -70,26 +70,35 @@ const Navbar = () => {
       className="fixed top-0 left-0 w-full bg-white/95 backdrop-blur shadow-md z-50"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Barre principale */}
-        <div className="h-20 flex flex-col md:flex-row items-center justify-between">
-          {/* Bloc Logo + Nom */}
-          <div className="flex flex-col items-center md:flex-row md:items-center md:space-x-3">
-            <Link
-              to="/"
-              className="flex flex-col items-center md:flex-row md:items-center"
+        {/* Conteneur principal */}
+        <div className="flex flex-col md:flex-row items-center justify-between py-3">
+          {/* Ligne supérieure : burger + logo */}
+          <div className="flex items-center justify-center w-full md:w-auto relative">
+            {/* Burger mobile à gauche */}
+            <button
+              className="absolute left-0 inline-flex items-center justify-center p-2 rounded-md border border-gray-200 md:hidden"
+              onClick={() => setOpen((v) => !v)}
+              aria-label="Menu"
             >
-              <img
+              {open ? "✕" : "☰"}
+            </button>
+
+            {/* Logo centré */}
+            <Link to="/" className="flex flex-col items-center mx-auto">
+              <motion.img
                 src={logo}
                 alt="Logo JBL Filmmaker"
                 className="h-12 md:h-16 mb-2 md:mb-0"
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
               />
-
               {/* Nom animé — uniquement visible sur mobile */}
               <motion.span
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
-                className="block md:hidden text-sm font-semibold text-gray-900 tracking-widest uppercase"
+                className="block md:hidden text-sm font-semibold text-gray-900 tracking-widest uppercase text-center"
                 style={{ fontFamily: '"Playfair Display", serif' }}
               >
                 JEAN-BAPTISTE LARRUCHON
@@ -132,15 +141,6 @@ const Navbar = () => {
               EN
             </button>
           </div>
-
-          {/* Burger mobile */}
-          <button
-            className="md:hidden inline-flex items-center justify-center p-2 rounded-md border border-gray-200 mt-2"
-            onClick={() => setOpen((v) => !v)}
-            aria-label="Menu"
-          >
-            {open ? "✕" : "☰"}
-          </button>
         </div>
 
         {/* Drawer mobile */}
