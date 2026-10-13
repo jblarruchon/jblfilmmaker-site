@@ -252,17 +252,33 @@ const ImageCard = ({ item, onClick, aspect = "aspect-[16/9]" }) => (
       />
     </div>
 
-    {/* Overlay titre */}
-    {item.title && (
-      <div
-        className="absolute inset-0 flex items-center justify-center text-center px-4"
-        style={{ fontFamily: '"Playfair Display", serif' }}
-      >
-        <span className="text-white text-sm md:text-lg tracking-[0.15em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform">
-          {item.title}
-        </span>
-      </div>
-    )}
+ {/* Overlay titre positionné plus bas */}
+
+{item.title && (
+
+  <div
+
+    className="absolute inset-0 flex items-center justify-center text-center px-4"
+
+    style={{
+
+      fontFamily: '"Playfair Display", serif',
+
+      paddingTop: "30%",
+
+    }}
+
+  >
+
+    <span className="text-white text-sm md:text-lg tracking-[0.15em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform">
+
+      {item.title}
+
+    </span>
+
+  </div>
+
+)}
   </button>
 );
 
