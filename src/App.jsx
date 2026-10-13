@@ -325,30 +325,17 @@ const Portfolio = () => {
 
       <div className="px-4 text-center">
 
-        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-white md:text-sm">
+        <span
 
-          Wedding Film
+  className="text-white text-sm md:text-lg tracking-[0.15em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform"
 
-        </p>
+  style={{ fontFamily: '"Playfair Display", serif' }}
 
-        <h2
+>
 
-          className="text-2xl font-light tracking-[0.15em] text-white drop-shadow-lg md:text-4xl"
+  LOVE IN SOUTH OUEST
 
-          style={{ fontFamily: '"Playfair Display", serif' }}
-
-        >
-
-          LOVE IN SOUTH OUEST
-
-        </h2>
-
-        <p className="mt-4 text-xs uppercase tracking-[0.2em] text-white md:text-sm">
-
-          Découvrir le film · ▶
-
-        </p>
-
+</span>
       </div>
 
     </div>
