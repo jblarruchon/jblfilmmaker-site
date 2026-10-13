@@ -337,24 +337,25 @@ const Portfolio = () => {
 
     </div>
 
-    <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors duration-500 group-hover:bg-black/25">
+    <div className="absolute inset-0 bg-black/10 transition-colors duration-500 group-hover:bg-black/25">
 
-      <div className="px-4 text-center">
+  <div
 
-        <span
+    className="absolute left-0 right-0 top-[65%] -translate-y-1/2 px-4 text-center"
 
-  className="text-white text-sm md:text-lg tracking-[0.15em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)] group-hover:scale-105 transition-transform"
+    style={{ fontFamily: '"Playfair Display", serif' }}
 
-  style={{ fontFamily: '"Playfair Display", serif' }}
+  >
 
->
+    <span className="text-white text-sm md:text-lg tracking-[0.15em] drop-shadow-[0_2px_8px_rgba(0,0,0,0.4)]">
 
-  LOVE IN SOUTH OUEST
+      LOVE IN SOUTH OUEST
 
-</span>
-      </div>
+    </span>
 
-    </div>
+  </div>
+
+</div>
 
   </button>
 
