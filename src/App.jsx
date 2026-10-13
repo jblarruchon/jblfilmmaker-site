@@ -11,6 +11,7 @@ import img1 from "./assets/Preview-Julie-Renan-37.jpeg";
 import img2 from "./assets/162.jpeg";
 import img3 from "./assets/EP1397.jpeg";
 import img4 from "./assets/thumb.jpg";
+import imgSouthOuest from "./assets/love-in-south-ouest.jpeg";
 import portraitJBL from "./assets/portrait-jbl.jpeg";
 import contactBanner from "./assets/contact-banner-1600x600.jpeg";
 
@@ -290,7 +291,71 @@ const Portfolio = () => {
         <p className="max-w-2xl mx-auto text-center text-gray-700 mb-8 md:mb-12">
           {t("home.intro")}
         </p>
+{/* FILM À LA UNE */}
 
+<div className="mb-10 md:mb-16">
+
+  <button
+
+    type="button"
+
+    onClick={() => setSelectedVideo("https://vimeo.com/1235413136")}
+
+    className="group relative block w-full overflow-hidden rounded-2xl"
+
+    aria-label="Regarder LOVE IN SOUTH OUEST"
+
+  >
+
+    <div className="aspect-[16/9] md:aspect-[21/9] w-full">
+
+      <img
+
+        src={imgSouthOuest}
+
+        alt="LOVE IN SOUTH OUEST — Film de mariage"
+
+        className="h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.02]"
+
+      />
+
+    </div>
+
+    <div className="absolute inset-0 flex items-center justify-center bg-black/10 transition-colors duration-500 group-hover:bg-black/25">
+
+      <div className="px-4 text-center">
+
+        <p className="mb-3 text-xs uppercase tracking-[0.3em] text-white md:text-sm">
+
+          Wedding Film
+
+        </p>
+
+        <h2
+
+          className="text-2xl font-light tracking-[0.15em] text-white drop-shadow-lg md:text-4xl"
+
+          style={{ fontFamily: '"Playfair Display", serif' }}
+
+        >
+
+          LOVE IN SOUTH OUEST
+
+        </h2>
+
+        <p className="mt-4 text-xs uppercase tracking-[0.2em] text-white md:text-sm">
+
+          Découvrir le film · ▶
+
+        </p>
+
+      </div>
+
+    </div>
+
+  </button>
+
+</div>
         {/* GALERIE */}
         <div className="space-y-10 md:space-y-16">
           {chunk(portfolioItems, 3).map((group, gi) => {
