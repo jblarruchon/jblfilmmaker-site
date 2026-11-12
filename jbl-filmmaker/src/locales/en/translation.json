@@ -1,0 +1,91 @@
+{
+  "nav": {
+    "portfolio": "Portfolio",
+    "about": "About",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "legal": "Legal notice"
+  },
+  "home": {
+    "title": "Wedding Films",
+    "intro": "JBL Filmmaker creates cinematic, elegant and deeply personal wedding films. Explore a selection of celebrations told through moving images.",
+    "seo_title": "Wedding films that feel like you",
+    "seo_text_1": "Based in the Paris region, Jean-Baptiste Larruchon creates refined wedding films for couples looking for a cinematic and personal way to remember their day. His approach combines an eye for storytelling, attention to detail and a sensitivity to genuine emotions: a glance, a loved one’s words, the energy of the celebration or the beauty of a setting.",
+    "seo_text_2": "From the preparations to the last moments of the celebration, each film is shaped as a vivid and timeless story. JBL Filmmaker is available in Paris, throughout France and internationally for destination weddings."
+  },
+  "about": {
+    "title": "About",
+    "text": "I’m Jean-Baptiste Larruchon, a wedding videographer based in the Paris region. Passionate about images and emotion, I create films that tell your story with authenticity, elegance and a strong sense of rhythm. I pay particular attention to glances, gestures, voices and all the moments that make your wedding unique.",
+    "approach_title": "A cinematic and thoughtful approach",
+    "approach_text": "My aim is to tell the story of your wedding without taking away its spontaneity. I work discreetly, with carefully crafted images and an edit shaped by the real atmosphere of your day. Speeches, ambient sounds, emotions and meaningful details naturally find their place in your film.",
+    "destination_text": "Based in the Paris region, I film weddings in Paris, across France and internationally, including destination weddings."
+  },
+  "services": {
+    "title": "PACKAGES",
+    "packages": {
+      "film": "FILM",
+      "prestige": "PRESTIGE",
+      "timeless": "TIMELESS",
+      "duration_short": "3–5 min",
+      "duration_medium": "6–10 min",
+      "duration_long": "12–15 min",
+      "feature_film4k": "4K Film",
+      "feature_1cam": "1 videographer",
+      "feature_2cam": "2 videographers",
+      "feature_drone": "Drone",
+      "feature_audio": "Audio / Speeches • recorded",
+      "feature_teaser": "2-min Teaser",
+      "cta_quote": "Request a quote",
+      "note": "*Packages include my presence throughout the day (from preparations to the first dance), editing time, equipment amortization, travel expenses and delivery via a personalized video gallery. Add-ons can be included on request.",
+      "addons_title": "ADD-ONS",
+      "raw": "RAW VIDEO RUSHES",
+      "raw_desc": "Delivery of all raw footage from the wedding ceremony.",
+      "trailer": "VIDEO TRAILER",
+      "trailer_desc": "1-minute highlight edit. Perfect for social media.",
+      "halfday": "EXTRA HALF-DAY",
+      "halfday_desc": "Additional half-day coverage, footage added to the final edit.",
+      "second": "SECOND VIDEOGRAPHER",
+      "second_desc": "A second videographer for more complete coverage.",
+      "special": "SPECIAL EDIT",
+      "special_desc": "Dedicated edit of a special moment (civil / religious / secular ceremony, etc.).",
+      "prewedding": "PRE-WEDDING VIDEO",
+      "prewedding_desc": "Session organized before/after the wedding (3–4h coverage) — cinematic memories."
+    },
+    "intro": "Every wedding is unique. I offer a choice of wedding film collections designed to preserve the essential moments of your day through cinematic storytelling, carefully recorded sound and personalised video delivery."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "For any service request or information, please fill out the form below. I’ll get back to you quickly 📩",
+    "form": {
+      "last_name": "Last name",
+      "first_name": "First name",
+      "email": "Email address",
+      "phone": "Phone number",
+      "where": "How did you find me?",
+      "where_options": {
+        "word": "Word of mouth",
+        "instagram": "Instagram",
+        "social": "Social media"
+      },
+      "budget": "Your budget (€)",
+      "date": "Event date",
+      "place": "Location",
+      "what_like": "What do you like in my work?",
+      "message": "Tell me about your wedding",
+      "wish_package": "Desired package",
+      "send": "Send",
+      "sending": "Sending...",
+      "success_title": "Thank you! Your message has been sent ✅",
+      "success_detail": "I’ll get back to you as soon as possible. You can also write to",
+      "error_generic": "An error occurred. Please try again.",
+      "error_network": "Unable to send the form. Please check your connection."
+    }
+  },
+  "legal": {
+    "title": "Legal notice",
+    "text": "This website is published by JBL Filmmaker. All content (texts, images, videos) is the exclusive property of JBL Filmmaker and may not be used without permission. Contact: {{email}}"
+  }
+}

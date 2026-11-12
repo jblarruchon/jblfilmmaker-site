@@ -1,0 +1,130 @@
+{
+  "nav": {
+    "portfolio": "Portfolio",
+    "about": "À propos",
+    "services": "Prestations",
+    "contact": "Contact"
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "legal": "Mentions légales"
+  },
+  "home": {
+    "title": "Films de mariage",
+    "intro": "JBL Filmmaker réalise des films de mariage cinématographiques, élégants et profondément personnels. Découvrez une sélection de célébrations racontées en images.",
+    "seo_title": "Des films de mariage qui vous ressemblent",
+    "seo_text_1": "Basé en région parisienne, Jean-Baptiste Larruchon accompagne les couples dans la réalisation de films de mariage haut de gamme. Son approche mêle regard cinématographique, sens du détail et attention portée aux émotions spontanées : un échange de regards, les mots d’un proche, l’énergie de la fête ou la beauté d’un lieu.",
+    "seo_text_2": "Des préparatifs au dernier mouvement de la soirée, chaque film est pensé comme un récit vivant et intemporel. JBL Filmmaker se déplace à Paris, en Île-de-France, partout en France et à l’étranger pour raconter votre journée avec discrétion et sensibilité.",
+    "faq": {
+      "eyebrow": "Questions fréquentes",
+      "title": "Préparer votre film de mariage",
+      "intro": "Quelques réponses pour vous accompagner dans la préparation de votre film de mariage.",
+      "items": [
+        {
+          "question": "Quel est le tarif d’un vidéaste de mariage haut de gamme ?",
+          "answer": "Le tarif dépend de la durée de présence, de la formule choisie, du nombre de vidéastes et des options souhaitées. Je propose plusieurs collections afin de m’adapter à votre journée et au film que vous imaginez. Contactez-moi en précisant votre date et votre lieu de réception pour recevoir une proposition personnalisée."
+        },
+        {
+          "question": "Combien de temps à l’avance faut-il réserver son vidéaste de mariage ?",
+          "answer": "Je vous conseille de me contacter dès que votre date et votre lieu sont confirmés. Les dates les plus demandées, notamment pendant la saison des mariages, peuvent être réservées longtemps à l’avance. Si votre mariage approche, n’hésitez pas à me demander si je suis encore disponible."
+        },
+        {
+          "question": "Intervenez-vous partout en France ?",
+          "answer": "Oui. Basé en région parisienne, je réalise des films de mariage à Paris, en Île-de-France, en Provence, sur la Côte d’Azur et dans toutes les régions françaises. Je peux également vous accompagner pour un mariage à l’étranger."
+        },
+        {
+          "question": "Proposez-vous des films de mariage à l’étranger ?",
+          "answer": "Oui. Je suis disponible pour les destination weddings en Europe et à l’international. Nous définissons ensemble les modalités de déplacement et le déroulé de la prestation en fonction du lieu et de votre programme."
+        },
+        {
+          "question": "Quels moments de la journée sont filmés ?",
+          "answer": "Selon la collection choisie et le déroulé convenu, le film peut couvrir les préparatifs, la cérémonie, les échanges de vœux, les photos de couple, les discours, le cocktail et la soirée jusqu’à l’ouverture de bal. Nous définissons ensemble les moments essentiels à raconter."
+        },
+        {
+          "question": "Quelle est la durée du film de mariage final ?",
+          "answer": "Plusieurs formats sont proposés, d’un film court et rythmé à un récit plus développé. Les collections actuelles prévoient des films d’environ 3 à 5 minutes, 6 à 10 minutes ou 12 à 15 minutes, selon la formule retenue."
+        },
+        {
+          "question": "Quand recevons-nous notre film de mariage ?",
+          "answer": "Le délai de livraison dépend de la période de l’année et du travail de post-production nécessaire. Le calendrier prévisionnel est précisé lors de nos échanges afin que vous sachiez à quel moment attendre votre film."
+        },
+        {
+          "question": "Comment obtenir un devis et vérifier vos disponibilités ?",
+          "answer": "Il vous suffit de m’indiquer votre date, le lieu du mariage, le déroulé envisagé et quelques mots sur l’ambiance que vous souhaitez. Vous pouvez utiliser le formulaire de contact du site ; je reviendrai vers vous pour échanger sur votre projet."
+        }
+      ]
+    }
+  },
+  "about": {
+    "title": "À propos",
+    "text": "Je m’appelle Jean-Baptiste Larruchon. Je suis vidéaste de mariage basé en région parisienne. Passionné par l’image et les émotions, je réalise des films qui racontent votre histoire avec authenticité, élégance et sens du rythme. J’accorde une attention particulière aux regards, aux gestes, aux voix et à tous ces instants qui rendent votre journée unique.",
+    "approach_title": "Une approche cinématographique et sensible",
+    "approach_text": "Mon travail consiste à raconter votre mariage sans en figer la spontanéité. Je privilégie une présence discrète, une image soignée et un montage rythmé par l’atmosphère réelle de votre journée. Les discours, les ambiances sonores, les émotions et les petits détails trouvent naturellement leur place dans votre film.",
+    "destination_text": "Depuis la région parisienne, je vous accompagne pour votre mariage à Paris, en Île-de-France, en Provence, sur la Côte d’Azur, partout en France et pour des destination weddings à l’étranger."
+  },
+  "services": {
+    "title": "FORMULES",
+    "packages": {
+      "film": "FILM",
+      "prestige": "PRESTIGE",
+      "timeless": "INTEMPOREL",
+      "duration_short": "3–5 mn",
+      "duration_medium": "6–10 mn",
+      "duration_long": "12–15 mn",
+      "feature_film4k": "Film 4K",
+      "feature_1cam": "1 cadreur",
+      "feature_2cam": "2 cadreurs",
+      "feature_drone": "Drone",
+      "feature_audio": "Sons / Discours • enregistrement",
+      "feature_teaser": "Teaser 2 mn",
+      "cta_quote": "Demander un devis",
+      "note": "*Les formules incluent ma présence toute la journée (des préparatifs à l’ouverture de bal), le temps passé au montage, l’amortissement du matériel, les frais de déplacement et la livraison via une galerie vidéo personnalisée. Des suppléments peuvent être ajoutés selon vos besoins.",
+      "addons_title": "SUPPLÉMENTS",
+      "raw": "RUSHS VIDÉO BRUTS",
+      "raw_desc": "Livraison de l’intégralité des rushs bruts de la cérémonie de mariage.",
+      "trailer": "TRAILER VIDÉO",
+      "trailer_desc": "Création d’un format d’1 mn avec les meilleurs moments. Idéal pour les réseaux sociaux.",
+      "halfday": "DEMI-JOURNÉE SUPPLÉMENTAIRE",
+      "halfday_desc": "Présence sur une demi-journée supplémentaire, ajout des rushs au montage final.",
+      "second": "SECOND VIDÉASTE",
+      "second_desc": "Présence d’un second vidéaste pour une captation plus complète des différents moments.",
+      "special": "MONTAGE SPÉCIAL",
+      "special_desc": "Montage d’un moment spécial de la journée (cérémonie laïque / église, etc.).",
+      "prewedding": "PRE-WEDDING VIDÉO",
+      "prewedding_desc": "Séance organisée avant/après le mariage (3–4 h de présence) — souvenirs ciné."
+    },
+    "intro": "Chaque mariage est unique. Je propose plusieurs collections de films de mariage, pensées pour conserver les moments essentiels de votre journée avec une réalisation cinématographique, une prise de son soignée et une livraison vidéo personnalisée."
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Pour toute demande de prestation ou d'information, remplissez le formulaire ci-dessous. Je vous répondrai rapidement 📩",
+    "form": {
+      "last_name": "Nom",
+      "first_name": "Prénom",
+      "email": "Adresse mail",
+      "phone": "Numéro de téléphone",
+      "where": "Comment m'avez-vous trouvé ?",
+      "where_options": {
+        "word": "Bouche à oreille",
+        "instagram": "Instagram",
+        "social": "Réseaux sociaux"
+      },
+      "budget": "Votre budget (€)",
+      "date": "Date de l'événement",
+      "place": "Lieu",
+      "what_like": "Qu'est-ce qui vous plaît dans mon travail ?",
+      "message": "Parlez-moi de votre mariage",
+      "wish_package": "Formule souhaitée",
+      "send": "Envoyer",
+      "sending": "Envoi en cours...",
+      "success_title": "Merci ! Votre message a bien été envoyé ✅",
+      "success_detail": "Je reviens vers vous au plus vite. Vous pouvez aussi m’écrire à",
+      "error_generic": "Une erreur est survenue. Merci de réessayer.",
+      "error_network": "Impossible d’envoyer le formulaire. Vérifiez votre connexion."
+    }
+  },
+  "legal": {
+    "title": "Mentions légales",
+    "text": "Ce site est édité par JBL Filmmaker. Tous les contenus (textes, images, vidéos) sont la propriété exclusive de JBL Filmmaker et ne peuvent être utilisés sans autorisation. Contact : {{email}}"
+  }
+}
